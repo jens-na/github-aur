@@ -1,4 +1,11 @@
 #!/bin/bash
-echo "Hello AUR"
 
-exit 0
+PKGBUILD=$1
+USER=$2
+PASSWD=$3
+
+PKGBUILDS=$(find $1 -iname "PKGBUILD")
+
+for i in "$PKGBUILDS"; do
+  echo "$i"
+done
