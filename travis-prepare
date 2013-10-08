@@ -32,6 +32,7 @@ version() {
   echo "Copyright (C) 2013 Jens Nazarenus <jens@0x6a.de>"
 }
 
+sudo apt-get install -qq libarchive
 cd github-aur/pacman/
 ./autogen.sh
 ./configure
