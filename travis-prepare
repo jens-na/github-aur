@@ -32,7 +32,7 @@ version() {
   echo "Copyright (C) 2013 Jens Nazarenus <jens@0x6a.de>"
 }
 
-cd pacman/
+cd github-aur/pacman/
 ./autogen.sh
 ./configure
 cd scripts/
