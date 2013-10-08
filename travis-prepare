@@ -46,8 +46,12 @@ sudo mkdir -p /var/lib/pacman/local
 sudo mkdir -p /var/lib/pacman/sync
 
 LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib ; export LD_LIBRARY_PATH
-pacman -Ss
+ldconfig
+
+echo "Server = http://ftp.tu-chemnitz.de/pub/linux/archlinux/\$repo/os/\$arch" >> /etc/pacman.d/mirrorlist
+
 sudo pacman -S
+pacman -Ss
 
 #export MAKEPKG="`pwd`/github-aur/pacman/scripts/makepkg"
 #export MAKEPKG_CFG="`pwd`/github-aur/etc/makepkg.conf"
