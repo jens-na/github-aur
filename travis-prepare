@@ -46,7 +46,7 @@ sudo mkdir -p /var/lib/pacman/local
 sudo mkdir -p /var/lib/pacman/sync
 
 LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib ; export LD_LIBRARY_PATH
-ldconfig
+sudo dconfig
 
 echo "Server = http://ftp.tu-chemnitz.de/pub/linux/archlinux/\$repo/os/\$arch" >> /etc/pacman.d/mirrorlist
 
