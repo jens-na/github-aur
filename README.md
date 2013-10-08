@@ -6,9 +6,10 @@ With github-aur you can push your PKGBUILD (+ related files) into a GitHub repos
 Afterwards the continuous integration service Travis CI will check if your packages 
 are OK and uploads them into the AUR.
 
-```
 How it works
+------------
 
+```
           git push                                           checks
    0      PKGBUILD   +-----------+  forwards  +-----------+  uploads  +-----------+
  - | -   ----------> |  GitHub   | ---------> | Travis CI | --------> |    AUR    |
