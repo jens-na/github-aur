@@ -32,10 +32,16 @@ version() {
   echo "Copyright (C) 2013 Jens Nazarenus <jens@0x6a.de>"
 }
 
+# libarchive-dev needs to be installed to build pacman
 sudo apt-get install -qq libarchive-dev
+
+# make pacman in the directory github-aur/pacman
 cd github-aur/pacman/
 ./autogen.sh
 ./configure
 cd scripts/
 make
-find
+cd ../../
+
+export MAKEPKG=github-aur/pacman/scripts/makepkg
+export MAKEPKG_CFG=github-aur/etc/makepkg.conf
