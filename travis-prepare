@@ -41,10 +41,10 @@ cd github-aur/pacman/
 ./configure
 cd scripts/
 make
-cd ../../
+sudo make install
 
-export MAKEPKG="`pwd`/github-aur/pacman/scripts/makepkg"
-export MAKEPKG_CFG="`pwd`/github-aur/etc/makepkg.conf"
+#export MAKEPKG="`pwd`/github-aur/pacman/scripts/makepkg"
+#export MAKEPKG_CFG="`pwd`/github-aur/etc/makepkg.conf"
 
-echo $MAKEPKG
-echo $MAKEPKG_CFG
+#echo $MAKEPKG
+#echo $MAKEPKG_CFG
