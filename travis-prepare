@@ -42,6 +42,9 @@ cd github-aur/pacman/
 make
 sudo make install
 
+sudo mkdir -p /var/lib/pacman/local
+sudo mkdir -p /var/lib/pacman/sync
+
 LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib ; export LD_LIBRARY_PATH
 pacman -Ss
 sudo pacman -S
