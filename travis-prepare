@@ -33,7 +33,7 @@ version() {
 }
 
 # libarchive-dev needs to be installed to build pacman
-sudo apt-get install -qq libarchive-dev
+sudo apt-get install -qq libarchive-dev asciidoc
 
 # make pacman in the directory github-aur/pacman
 cd github-aur/pacman/
