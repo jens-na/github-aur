@@ -43,7 +43,8 @@ cd scripts/
 make
 sudo make install
 
-pacman -Ss
+/usr/local/bin/pacman -Ss
+sudo /usr/local/bin/pacman -S
 
 #export MAKEPKG="`pwd`/github-aur/pacman/scripts/makepkg"
 #export MAKEPKG_CFG="`pwd`/github-aur/etc/makepkg.conf"
