@@ -42,7 +42,8 @@ cd github-aur/pacman/
 make
 sudo make install
 
-find "/usr/local/"
+pacman -Ss
+sudo pacman -S
 
 #export MAKEPKG="`pwd`/github-aur/pacman/scripts/makepkg"
 #export MAKEPKG_CFG="`pwd`/github-aur/etc/makepkg.conf"
