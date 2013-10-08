@@ -43,8 +43,8 @@ cd scripts/
 make
 cd ../../
 
-export MAKEPKG=github-aur/pacman/scripts/makepkg
-export MAKEPKG_CFG=github-aur/etc/makepkg.conf
+export MAKEPKG="`pwd`/github-aur/pacman/scripts/makepkg"
+export MAKEPKG_CFG="`pwd`/github-aur/etc/makepkg.conf"
 
 echo $MAKEPKG
 echo $MAKEPKG_CFG
