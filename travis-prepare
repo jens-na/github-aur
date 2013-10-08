@@ -39,7 +39,6 @@ sudo apt-get install -qq libarchive-dev
 cd github-aur/pacman/
 ./autogen.sh
 ./configure
-cd scripts/
 make
 sudo make install
 
