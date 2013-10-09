@@ -32,6 +32,8 @@ version() {
   echo "Copyright (C) 2013 Jens Nazarenus <jens@0x6a.de>"
 }
 
+git submodule update --init --recursive
+
 # libarchive-dev needs to be installed to build pacman
 sudo apt-get install -qq libarchive-dev asciidoc
 
