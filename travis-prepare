@@ -35,21 +35,23 @@ version() {
 # libarchive-dev needs to be installed to build pacman
 sudo apt-get install -qq libarchive-dev asciidoc
 
-# make pacman in the directory github-aur/pacman
+#
+# make and prepare pacman
+# 
 cd github-aur/pacman/
 ./autogen.sh
 ./configure
 make
 sudo make install
-
 sudo mkdir -p /var/lib/pacman/local
 sudo mkdir -p /var/lib/pacman/sync
-
-LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib ; export LD_LIBRARY_PATH
 sudo ldconfig
 
-echo "Server = http://ftp.tu-chemnitz.de/pub/linux/archlinux/\$repo/os/\$arch" >> /etc/pacman.d/mirrorlist
+sudo echo "Server = http://ftp.tu-chemnitz.de/pub/linux/archlinux/\$repo/os/\$arch" >> /etc/pacman.d/mirrorlist
 
+#
+# test pacman 
+# 
 sudo pacman -S
 pacman -Ss
 
