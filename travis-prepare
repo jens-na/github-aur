@@ -51,15 +51,11 @@ sudo ldconfig
 
 sudo echo "Server = http://ftp.tu-chemnitz.de/pub/linux/archlinux/\$repo/os/\$arch" >> /usr/local/etc/pacman.d/mirrorlist
 
-find /usr/etc
-
-cat /usr/local/etc/pacman.conf
-cat /usr/local/etc/pacman.d/mirrorlist
 #
 # test pacman 
 # 
-sudo pacman -S
-pacman -Ss
+sudo pacman -S --config /usr/local/etc/pacman.conf
+pacman -Ss --config /usr/local/etc/pacman.conf
 
 #export MAKEPKG="`pwd`/github-aur/pacman/scripts/makepkg"
 #export MAKEPKG_CFG="`pwd`/github-aur/etc/makepkg.conf"
