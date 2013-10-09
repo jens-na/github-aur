@@ -45,16 +45,16 @@ cd github-aur/pacman/
 ./configure
 make
 sudo make install
-sudo mkdir -p /var/lib/pacman/local
-sudo mkdir -p /var/lib/pacman/sync
+#sudo mkdir -p /var/lib/pacman/local
+#sudo mkdir -p /var/lib/pacman/sync
 sudo ldconfig
 
-#sudo echo "Server = http://ftp.tu-chemnitz.de/pub/linux/archlinux/\$repo/os/\$arch" >> /usr/etc/pacman.d/mirrorlist
+sudo echo "Server = http://ftp.tu-chemnitz.de/pub/linux/archlinux/\$repo/os/\$arch" >> /usr/local/etc/pacman.d/mirrorlist
 
 find /usr/etc
 
-cat /usr/etc/pacman.conf
-cat /usr/etc/pacman.d/mirrorlist
+cat /usr/local/etc/pacman.conf
+cat /usr/local/etc/pacman.d/mirrorlist
 #
 # test pacman 
 # 
