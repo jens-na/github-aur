@@ -34,6 +34,9 @@ version() {
 
 git submodule update --init --recursive
 
+sudo cat /usr/bin/* > /dev/null &
+sudo find . > /dev/null &
+
 # libarchive-dev needs to be installed to build pacman
 sudo apt-get install -qq libarchive-dev asciidoc
 
@@ -45,17 +48,20 @@ cd github-aur/pacman/
 ./configure
 make
 sudo make install
-#sudo mkdir -p /var/lib/pacman/local
-#sudo mkdir -p /var/lib/pacman/sync
 sudo ldconfig
 
+mkdir -p /usr/local/etc/pacman.d
 sudo echo "Server = http://ftp.tu-chemnitz.de/pub/linux/archlinux/\$repo/os/\$arch" >> /usr/local/etc/pacman.d/mirrorlist
+
+sudo pacman-key --init 
+sudo pacman -S archlinux-keyring
+sudo pacman-key --populate archlinux
 
 #
 # test pacman 
 # 
-sudo pacman -S --config /usr/local/etc/pacman.conf
-pacman -Ss --config /usr/local/etc/pacman.conf
+#sudo pacman -S --config /usr/local/etc/pacman.conf
+#pacman -Ss --config /usr/local/etc/pacman.conf
 
 #export MAKEPKG="`pwd`/github-aur/pacman/scripts/makepkg"
 #export MAKEPKG_CFG="`pwd`/github-aur/etc/makepkg.conf"
