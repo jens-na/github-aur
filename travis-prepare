@@ -35,7 +35,7 @@ version() {
 git submodule update --init --recursive
 
 # entropy
-for i in `seq 1 5`; do cat /usr/bin/* > /dev/null ; done
+for i in `seq 1 5`; do sudo cat /usr/bin/* > /dev/null ; done
 
 # libarchive-dev needs to be installed to build pacman
 sudo apt-get install -qq libarchive-dev asciidoc
