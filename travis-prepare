@@ -47,8 +47,8 @@ tar -xvf pacman.pkg.tar.gz -C pacman-install
 mkdir -p ./pacman-install/etc/pacman.d/
 echo "Server = http://ftp.tu-chemnitz.de/pub/linux/archlinux/\$repo/os/\$arch" >> ./pacman-install/etc/pacman.d/mirrorlist
 
-sudo cp pacman-install /usr/bin/* /usr/local/bin/
-sudo cp pacman-install /usr/lib/* /usr/local/lib/
+sudo cp pacman-install/usr/bin/* /usr/local/bin/
+sudo cp pacman-install/usr/lib/* /usr/local/lib/
 
 ldconfig
 
