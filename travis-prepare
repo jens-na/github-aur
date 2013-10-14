@@ -48,5 +48,5 @@ sudo ldconfig /lib /usr/lib ./pacman-install/usr/lib
 mkdir -p ./pacman-install/etc/pacman.d/
 echo "Server = http://ftp.tu-chemnitz.de/pub/linux/archlinux/\$repo/os/\$arch" >> ./pacman-install/etc/pacman.d/mirrorlist
 
-#sudo ./pacman-install/usr/bin/pacman --root ./pacman-install -Sy
-#sudo ./pacman-install/usr/bin/pacman --root ./pacman-install -Ss
+sudo ./pacman-install/usr/bin/pacman --root ./pacman-install -Sy
+sudo ./pacman-install/usr/bin/pacman --root ./pacman-install -Ss
