@@ -36,7 +36,7 @@ version() {
 git submodule update --init --recursive
 
 # update dependencies
-sudo apt-get install -qq libarchive-dev
+sudo apt-get install -qq libarchive-dev libarchive13
 
 # download pacman and extract it
 mkdir -p pacman-install
