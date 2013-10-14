@@ -42,7 +42,7 @@ sudo apt-get install -qq libarchive-dev
 mkdir -p pacman-install
 wget "https://www.archlinux.de/?page=GetFileFromMirror;file=core%2Fos%2Fx86_64%2Fpacman-4.1.2-1-x86_64.pkg.tar.xz" -O pacman.pkg.tar.gz
 tar -xvf pacman.pkg.tar.gz -C pacman-install
-sudo ldconfig /lib /usr/lib ./pacman-install/usr/lib
+sudo ldconfig ./pacman-install/usr/lib
 
 # update mirrorlist
 mkdir -p ./pacman-install/etc/pacman.d/
