@@ -35,8 +35,13 @@ version() {
 # update git submodules
 git submodule update --init --recursive
 
+<<<<<<< HEAD
 # update dependencies
 sudo apt-get install -qq libarchive-dev
+=======
+# entropy
+for i in `seq 1 5`; do sudo cat /usr/bin/* > /dev/null ; done
+>>>>>>> 828a23e4e906924e0de7c1242a43a4b8e73ebe91
 
 # download pacman and extract it
 mkdir -p pacman-install
@@ -44,9 +49,37 @@ wget "https://www.archlinux.de/?page=GetFileFromMirror;file=core%2Fos%2Fx86_64%2
 tar -xvf pacman.pkg.tar.gz -C pacman-install
 sudo ldconfig ./pacman-install/lib
 
+<<<<<<< HEAD
 # update mirrorlist
 mkdir -p ./pacman-install/etc/pacman.d/
 echo "Server = http://ftp.tu-chemnitz.de/pub/linux/archlinux/\$repo/os/\$arch" >> ./pacman-install/etc/pacman.d/mirrorlist
+=======
+#
+# make and prepare pacman
+# 
+cd github-aur/pacman/
+./autogen.sh
+./configure
+make
+sudo make install
+sudo ldconfig
+
+sudo mkdir -p /usr/local/etc/pacman.d
+sudo echo "Server = http://ftp.tu-chemnitz.de/pub/linux/archlinux/\$repo/os/\$arch" >> /usr/local/etc/pacman.d/mirrorlist
+
+sudo pacman-key --init 
+sudo pacman -S archlinux-keyring
+sudo pacman-key --populate archlinux
+
+#
+# test pacman 
+# 
+#sudo pacman -S --config /usr/local/etc/pacman.conf
+#pacman -Ss --config /usr/local/etc/pacman.conf
+
+#export MAKEPKG="`pwd`/github-aur/pacman/scripts/makepkg"
+#export MAKEPKG_CFG="`pwd`/github-aur/etc/makepkg.conf"
+>>>>>>> 828a23e4e906924e0de7c1242a43a4b8e73ebe91
 
 sudo ./pacman-install/usr/bin/pacman --root ./pacman-install -Sy
 sudo ./pacman-install/usr/bin/pacman --root ./pacman-install -Ss
